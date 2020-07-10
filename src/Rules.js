@@ -99,29 +99,29 @@ class Yahtzee extends Rule {
 }
 
 // ones, twos, etc score as sum of that value
-const ones = new TotalOneNumber({ val: 1 });
-const twos = new TotalOneNumber({ val: 2 });
-const threes = new TotalOneNumber({ val: 3 });
-const fours = new TotalOneNumber({ val: 4 });
-const fives = new TotalOneNumber({ val: 5 });
-const sixes = new TotalOneNumber({ val: 6 });
+const ones = new TotalOneNumber({ val: 1, description: "1 point per 1"});
+const twos = new TotalOneNumber({ val: 2, description: "2 point per 2" });
+const threes = new TotalOneNumber({ val: 3, description: "3 point per 3" });
+const fours = new TotalOneNumber({ val: 4, description: "4 point per 4" });
+const fives = new TotalOneNumber({ val: 5, description: "5 point per 5" });
+const sixes = new TotalOneNumber({ val: 6, description: "6 point per 6" });
 
 // three/four of kind score as sum of all dice
-const threeOfKind = new SumDistro({ count: 3 });
-const fourOfKind = new SumDistro({ count: 4 });
+const threeOfKind = new SumDistro({ count: 3, description: "Sum all dice if 3 are the same" });
+const fourOfKind = new SumDistro({ count: 4, description: "Sum all dice if 4 are the same" });
 
 // full house scores as flat 25
-const fullHouse = new FullHouse({ score: 25 });
+const fullHouse = new FullHouse({ score: 25, description: "25 point for 3 and 2 of the same" });
 
 // small/large straights score as 30/40
-const smallStraight = new SmallStraight({ score: 30 })
-const largeStraight = new LargeStraight({ score: 40 });
+const smallStraight = new SmallStraight({ score: 30, description: "30 point for 4 consecutive numbers" })
+const largeStraight = new LargeStraight({ score: 40, description: "40 point for 5 consecutive numbers" });
 
 // yahtzee scores as 50
-const yahtzee = new Yahtzee({ score: 50 });
+const yahtzee = new Yahtzee({ score: 50, description: "50 point for 5 equal numbers" });
 
 // for chance, can view as some of all dice, requiring at least 0 of a kind
-const chance = new SumDistro({ count: 0 });
+const chance = new SumDistro({ count: 0, description: "Sum of all dice" });
 
 export {
   ones,

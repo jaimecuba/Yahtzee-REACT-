@@ -3,11 +3,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: auto;
 }
 
 .App-title {
-  margin-top: 1rem;
+  margin: 1rem;
   color: white;
   margin-bottom: 0;
   font-weight: 100;
